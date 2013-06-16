@@ -1,0 +1,179 @@
+Column 1,Column 2,Column 3,Column 4,Column 5,Column 6,Column 7,Column 8,Column 9,Column 10,Column 11,Column 12,Column 13,Column 14,Column 15,Column 16,Column 17,Column 18,Column 19,Column 20,Column 21,Column 22,Column 23,Column 24,Column 25,Column 26,Column 27,Column 28,Column 29,Column 30,Column 31,Column 32
+,,,,,Wesen des Netzes/ des Internets,Verhältnis real/virtuell,"Gesellschaft, ges. Enwicklung","Regulierung/Regeln, Staat",Kontext eines digitalen Kodex,Chancen/Risiken,"Innovation, Entwicklung",Bedingungen an Lösungen,"Lösungen, Lösungsraum",Institutionen,Menschliche Beziehungen,Vertrauen,Grundrechte,"Werte, Maßstäbe",Grundsätzliches,Begriffsbestimmungen,Machtkonstellationen,"Netzökonomie, Daten als Währung",Unklar,Lösungsansätze,,,,Anzahl,,,
+Teil,These,Nr.,Id,Wortmeldung,29.0,14.0,15.0,20.0,5.0,10.0,5.0,,36.0,4.0,6.0,17.0,9.0,10.0,14.0,6.0,5.0,7.0,15.0,38.0,0.0,0.0,0.0,,,These (raw),Nr. pre
+Verantwortung_Thesen_1,V1,1.0,V1_01,Ist eine übergreifende Perspektive (Verantwortung/Internet) sinnvoll?,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,1.      Ist eine übergreifende Perspektive (Verantwortung/Internet) sinnvoll?,8.0
+Verantwortung_Thesen_1,V1,2.0,V1_02,Gut und Böse. Maßstab für die digitale Welt?,,,,,,,,,,,,,,x,,,,,,,,,,1.0,,2.      Gut und Böse. Maßstab für die digitale Welt?,8.0
+Verantwortung_Thesen_1,V1,3.0,V1_03,Bewusstseinswandel,,,x,,,,,,,,,,,,x,,,,,,,,,2.0,,3.      Bewusstsein-wandel,8.0
+Verantwortung_Thesen_1,V1,4.0,V1_04,Entwicklungsdynamik va. Regelungsträgheit,x,,,x,x,,,,,,,,,,,,,,,,,,,3.0,,4.      Entwicklungsdynamik va. Regelungsträgheit,8.0
+Verantwortung_Thesen_1,V1,5.0,V1_05,Bremst ein digitaler Kodex Innovationen?,,,,,x,x,x,,,,,,,,,,,,,,,,,3.0,,5.      Bremst ein digitaler Kodex Innovationen?,8.0
+Verantwortung_Thesen_1,V1,6.0,V1_06,Zeitliche Dimension - Wie kann Entwicklungsoffenheit erhalten/gewährleistet werden (Monopole = Entropie? Notstand?),,,,,,,x,,,,,,,,,,,,,,,,,1.0,,6.      Zeitliche Dimension - Wie kann Entwicklungsoffenheit erhalten/gewährleistet werden (Monopole = Entopie? Notstand?),8.0
+Verantwortung_Thesen_1,V1,7.0,V1_07,"Interesse an Neuem, Neues schlägt Regelungen",,,,x,,,x,,,,,,,,,,,,,,,,,2.0,,7.      Interesse an Neuem/ Neues schlägt Regelungen,8.0
+Verantwortung_Thesen_1,V1,8.0,V1_08,Verantwortung und Innovationen,,,,,,,x,,,,,,,,,,,,,,,,,1.0,,8.      Verantwortung und Innovationen,8.0
+Verantwortung_Thesen_1,V1,9.0,V1_09,"Wer ist ""das Netz""? Verantwortung der dominierenden Plattformen",,,,,,,,,,x,,,,,,,,,,,,,,1.0,,9.      Wer ist “das Netz”. Verantwortung der dominierenden Plattformen,8.0
+Verantwortung_Thesen_1,V1,10.0,V1_10,Sozialromantische Überhöhung digitaler Kommunikation,x,,x,,,,,,,,,,,,,,,,,,,,,2.0,,10.  Sozialromantische Überhöhung digitaler Kommunikation,5.0
+Verantwortung_Thesen_1,V1,11.0,V1_11,Diffusion von Interessen und Wertvorstellungen,,,x,,,,,,,,,,,x,,,,,,,,,,2.0,,11.  Diffusion von Interessen und Wertvorstellungen,5.0
+Verantwortung_Thesen_1,V1,12.0,V1_12,Realen und virtuellen Raum mental vernetzen,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,12.  Realen und virtuellen Raum mental vernetzen,5.0
+Verantwortung_Thesen_1,V1,13.0,V1_13,Die Wirklichkeit findet im Kopf statt + Essen/Trinken/Kleiden/Wohnen,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,13.  Die Wirklichkeit findet im Kopf statt + Essen/Trinken/Kleiden/Wohnen,5.0
+Verantwortung_Thesen_1,V1,14.0,V1_14,"Das ""Netz"" ist ein sozialer Zusammenhang",x,,x,,,,,,,,,,,,,,,,,,,,,2.0,,14.  Das “Netz” ist ein sozialer Zusammenhang,5.0
+Verantwortung_Thesen_1,V1,15.0,V1_15,Diskussion über digitalen Kodex aus sozialtheoretischer Perspektive,,,,,x,,,,,,,,,,,,,,,,,,,1.0,,15.  Diskussion über digitalen Kodex aus sozialtheoretischer Perspektive,5.0
+Verantwortung_Thesen_1,V1,16.0,V1_16,Netzwerke - Projekte - Unsicherheiten,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,16.  Netzwerke - Projekte - Unsicherheiten,5.0
+Verantwortung_Thesen_1,V1,17.0,V1_17,"Chancen nutzen, Risiken erkennen",,,,,,x,,,,,,,,,,,,,,,,,,1.0,,"17.  Chancen nutzen, Risiken erkennen",5.0
+Verantwortung_Thesen_1,V1,18.0,V1_18,Keine Chance ohne Risiken - beides stimmt,,,,,,x,,,,,,,,,,,,,,,,,,1.0,,18.  Keine Chance ohne Risiken - beides stimmt,5.0
+Verantwortung_Thesen_1,V1,19.0,V1_19,Chance für wenige? Risiken für viele?,,,,,,x,,,,,,,,,,,,,,,,,,1.0,,19.  Chance für wenige? Risiken für viele?,5.0
+Verantwortung_Thesen_1,V1,20.0,V1_20,Verantwortung → Last. Autorität. Kompetenz,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,20.  Verantwortung → Last. Autorität. Kompetenz,5.0
+Verantwortung_Thesen_1,V1,21.0,V1_21,Verantwortungslosigkeit als Netz- oder als allgemeines Phänomen,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,21.  Verantwortungslosigkeit als Netz- oder als allgemeines Phänomen,5.0
+Verantwortung_Thesen_1,V1,22.0,V1_22,Wer verantwortet Algorithmen?,,,,,,,,,x,,,,,,,,,x,,Verantortung für Algorithmen,,,,3.0,,22.  Wer verantwortet Algorithmen?,5.0
+Verantwortung_Thesen_1,V1,23.0,V1_23,Eigenverantwortung vs. Regulierung,,,,x,,,,,x,,,,,,,,,,,Lösungsraum von Eigenverantwortung bis Regulierung,,,,3.0,,23.  Eigenverantwortung vs. Regulierung,5.0
+Verantwortung_Thesen_1,V1,24.0,V1_24,"Zeitliche Perspektive → Hat das Netz die erforderliche Entwicklung, um Risiken/Chancen zu bewerten?",x,,,,,x,,,,,,,,,,,,,,,,,,2.0,,"24.  Zeitliche Perspektive → Hat das Netz die erforderliche Entwicklung, um Risiken/Chancen zu bewerten?",5.0
+Verantwortung_Thesen_1,V1,25.0,V1_25,Partizipationsversprechen,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,25.  Partizipationsversprechen,5.0
+Verantwortung_Thesen_1,V1,26.0,V1_26,Digital/analog: welche Werte sollen (weiter)gelten? Wie können Werte in der digitalen Kultur übersetzt werden?,,x,,,,,,,,,,,,x,,,,,,,,,,2.0,,26.  digital/analog: welche Werte sollen (weiter)gelten? Wie können Werte in der digitalen Kultur übersetzt werden?,5.0
+Verantwortung_Thesen_1,V1,27.0,V1_27,"Ist es sinnvoll, noch über ""das Netz"" zu sprechen?",x,,,,,,,,,,,,,,x,,,,,,,,,2.0,,27.  Ist es sinnvoll noch über “das Netz” zu sprechen?,5.0
+Verantwortung_Thesen_1,V1,28.0,V1_28,Selbstverstärkung des Mainstreams,,,x,,,,,,,,,,,,,,,,,,,,,1.0,,28.  Selbstverstärkung des Mainstreams,5.0
+Verantwortung_Thesen_1,V1,29.0,V1_29,Ist das Netz Betrachtungsgegenstand? → Oder nicht viel mehr die Gesellschaft?,x,,x,,x,,,,,,,,,,,x,,,,,,,,4.0,,29.  Ist das Netz Betrachtungsgegenstand? → Oder nicht viel mehr die Gesellschaft?,5.0
+Verantwortung_Thesen_1,V1,30.0,V1_30,Von der Informations- zur Netz(werk)gesellschaft?,,,x,,,,,,,,,,,,x,,,,,,,,,2.0,,30.  Von der Informations- zur Netz(werk)gesellschaft?,5.0
+Verantwortung_Thesen_1,V1,31.0,V1_31,Aufklärung,,,,,,,,,x,,,,,,,,,,,Aufklärung,,,,2.0,,31.  Aufklärung,5.0
+Verantwortung_Thesen_1,V1,32.0,V1_32,Transparenz stärkt Verantwortungsgefühl,,,,,,,,,x,,,,,,,,,,,Transparenz,,,,2.0,,32.  Transparenz stärkt Verantwortungsgefühl,5.0
+Verantwortung_Thesen_1,V1,33.0,V1_33,Murray: - wer ist wir? -wieso ist filesharing “unsozial”? -wer spricht? -welche Resonanzräume gibt es?- welche Interessen?,,,x,,,,,,,,,,,,,,,,,,,,,1.0,,33.  Murray: - wer ist wir? -wieso ist filesharing “unsozial”? -wer spricht? -welche Resonanzräume gibt es?- welche Interessen?,5.0
+Verantwortung_Thesen_1,V1,34.0,V1_34,"Wer ist ""wir""?",,,,,,,,,,,,,,,x,,,,,,,,,1.0,,34.  Wer ist “wir”?,5.0
+Verantwortung_Thesen_1,V1,35.0,V1_35,"Neues Verständnis von Teilen, Privatsphäre, Arbeiten etc.?",,,x,,,,,,,,,,,,,,,,,,,,,1.0,,"35.  Neues Verständnis von Teilen, Privatsphäre, Arbeiten etc.?",5.0
+Verantwortung_Thesen_1,V1,36.0,V1_36,Crowd Power oder Werkzeug für totalitäre Strukturen?,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,36.  Crowd Power oder Werkzeug für totalitäre Strukturen?,5.0
+Verantwortung_Thesen_1,V1,37.0,V1_37,"Gefahren der ""Gamification""?",,,,,,x,,,,,,,,,,,,,,,,,,1.0,,37.  Gefahren der “Gamification”?,5.0
+Verantwortung_Thesen_1,V1,38.0,V1_38,Crowd Power ohne Straßenkampf,,,x,,,,,,,,,,,,,,,,,,,,,1.0,,38.  Crowd Power ohne Straßenkampf,5.0
+Verantwortung_Thesen_1,V1,39.0,V1_39,Fehlendes direktes Feedback,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,39.  Fehlendes direktes Feedback,5.0
+Verantwortung_Thesen_1,V1,40.0,V1_40,Verdrängung von Formalien,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,40.  Verdrängung von Formalien,5.0
+Verantwortung_Thesen_1,V1,41.0,V1_41,Mehr temporäre Verpflichtungen,,,x,,,,,,,,,,,,,,,,,,,,,1.0,,41.  Mehr temporäre Verpflichtungen,5.0
+Verantwortung_Thesen_1,V1,42.0,V1_42,Balance Freiheit/Sicherheit/Verantwortung,,,,,,,,x,,,,,,,,,,,,"Trade-off zwischen Freiheit, Sicherheit, Verantwortung",,,,2.0,,42.  Balance Freiheit/Sicherheit/Verantwortung,5.0
+Verantwortung_Thesen_1,V1,43.0,V1_43,"Innovation + allgemeine Interessen → Wem gehört das ""Neue""? Wer darf erneuern + das Neue nutzen?",,,,,,,x,,,,,,,,,,,,,,,,,1.0,,43.  Innovation + allgemeine Interessen → Wem gehört das “Neue”? Wer darf erneuern + das Neue nutzen?,5.0
+Verantwortung_Thesen_1,V1,44.0,V1_44,Unterschiede zwischen real/virtuell. Sind sie wirklich so groß? Worin liegen sie begründet?,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,44.  Unterschiede zwischen real/virtuell. Sind sie wirklich so groß? Worin liegen sie begründet?,5.0
+Verantwortung_Thesen_1,V1,45.0,V1_45,Unterschiedliches Verhalten in analoger oder digitaler Welt,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,45.  Unterschiedliches Verhalten in analoger oder digitaler Welt,5.0
+Verantwortung_Thesen_1,V1,46.0,V1_46,Sind Werte/soziale Normen 1:1 in die digitale Welt transferierbar?,,x,,,,,,,,,,,,x,,,,,,,,,,2.0,,46.  Sind Werte/soziale Normen 1:1 in die digitale Welt transferierbar?,5.0
+Verantwortung_Thesen_1,V1,47.0,V1_47,Spielen ohne Regeln?,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,47.  Spielen ohne Regeln?,5.0
+Verantwortung_Thesen_1,V1,48.0,V1_48,"Braucht die Digitalisierung eine ""ordnende Instanz""? welche?",,,,x,,,,,,x,,,,,,,,,,,,,,2.0,,48.  Braucht die Digitalisierung eine “ordnende Instanz”? welche?,5.0
+Verantwortung_Thesen_1,V1,49.0,V1_49,An welchen Maßstäben misst sich Verantwortung?,,,,,,,,,,,,,,x,,,,,,,,,,1.0,,49.  An welchen Maßstäben misst sich Verantwortung?,5.0
+Verantwortung_Thesen_1,V1,50.0,V1_50,Wer hat welche Interessen? → Verantwortung setzt Interessen & Ideen voraus,,,,,,,,,,,,,,,,,x,,,,,,,1.0,,50.  Wer hat welche Interessen? → Verantwortung setzt Interessen&Ideen voraus,5.0
+Verantwortung_Thesen_1,V1,51.0,V1_51,Vielfach neue Kontakt- und Geschäftspartner im Vergleich zu analog,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,51.  Vielfach neue Kontakt- und Geschäftspartner im Vergleich zu analog,5.0
+Verantwortung_Thesen_1,V1,52.0,V1_52,Bekenntnis zur Verantwortung,,,,,,,,,x,,,,,,,,,,,Bekenntnis zur Verantwortung,,,,2.0,,52.  Bekenntnis zur Verantwortung,5.0
+Verantwortung_Thesen_1,V1,53.0,V1_53,"Wie erkenne ich im Netz, dass jemand verantwortlich handelt? Identifikation, Verhalten",x,,,,,,,,,,,,,,,,,,,,,,,1.0,,"53.  Wie erkenne ich im Netz das jemand verantwortlich handelt? Identifikation, Verhalten",5.0
+Verantwortung_Thesen_1,V1,54.0,V1_54,Kein körperlicher sozialer Kontakt,x,x,x,,,,,,,,,,,,,,,,,,,,,3.0,,54.  Kein körperlicher sozialer Kontakt,5.0
+Verantwortung_Thesen_1,V1,55.0,V1_55,Anonymität untergräbt soziale Normen,,,,,,x,,x,,,,,,,,,,,,"Identifizierbarkeit, oder Anonymität als Einschränkung der Wirksamkeit sozialer Normen",,,,3.0,,55.  Anonymität untergräbt soziale Normen,5.0
+Verantwortung_Thesen_1,V1,56.0,V1_56,Entfernung zu nahestehenden Menschen (Virtualisierung des Umgangs),,,,,,x,,,,,x,,,,,,,,,,,,,2.0,,56.  Entfernung zu nahestehenden Menschen (Virtualisierung des Umgangs),5.0
+Verantwortung_Thesen_1,V1,57.0,V1_57,Verantwortung: wo muss/soll auf Anonymität verzichtet werden,,,,,,,,x,,,,,,,,,,,,Verzicht auf Anonymität,,,,2.0,,57.  Verantwortung: wo  muss/soll auf Anonymität verzichtet werden,5.0
+Verantwortung_Thesen_1,V1,58.0,V1_58,Eingrenzung sozialer Kontakte auf Gleichgesinnte,,,,,,,,,,,x,,,,,,,,,,,,,1.0,,58.  Eingrenzung sozialer Kontakte auf Gleichgesinnte,5.0
+Verantwortung_Thesen_1,V1,59.0,V1_59,Nähe zu fernen Menschen,,,,,,,,,,,x,,,,,,,,,,,,,1.0,,59.  Nähe zu fernen Menschen,5.0
+Verantwortung_Thesen_1,V1,60.0,V1_60,Möglichkeit viele Beziehungen gleichzeitig zu pflegen (eher auf niedrigem Niveau),x,,x,,,,,,,,x,,,,,,,,,,,,,3.0,,60.  Möglichkeit viele Beziehungen gleichzeitig zu pflegen (eher auf niedrigem Niveau),5.0
+Verantwortung_Thesen_1,V1,61.0,V1_61,Direkte Kommunikation weltweit macht das Leben reichhaltiger,,,,,,x,,,,,,,,,,,,,,,,,,1.0,,61.  Direkte Kommunikation weltweit macht das Leben reichhaltiger,5.0
+Verantwortung_Thesen_1,V1,62.0,V1_62,Soziale Netzwerke virtuell-analog,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,62.  Soziale Netzwerke virtuell-analog,5.0
+Verantwortung_Thesen_1,V1,63.0,V1_63,Internet bringt Kulturen zusammen,,,,,,x,,,,,,,,,,,,,,,,,,1.0,,63.  Internet bringt Kulturen zusammen,5.0
+Verantwortung_Thesen_1,V1,64.0,V1_64,Verantwortung dient der Entlastung,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,64.  Verantwortung dient der Entlastung,5.0
+Verantwortung_Thesen_1,V1,65.0,V1_65,Autofahrer benehmen sich anders als in persönlichen Begegnungen,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,65.  Autofahrer benehmen sich anders als in persönlichen Begegnungen,5.0
+Verantwortung_Thesen_1,V1,66.0,V1_66,"Internet. Kommunikation. Feedback ""direkt"" oder ""indirekt""?",x,,,,,,,,,,,,,,,,,,,,,,,1.0,,66.  Internet. Kommunikation. Feedback “direkt” oder “indirekt”?,5.0
+Verantwortung_Thesen_1,V1,67.0,V1_67,Digitale Welt nur Spiegelbild der realen Welt?,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,67.  Digitale Welt nur Spiegelbild der realen Welt?,5.0
+Verantwortung_Thesen_1,V1,68.0,V1_68,Dekontextualisierung von Information + Kommunikation,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,68.  Dekontextualisierung von Information + Kommunikation,5.0
+Verantwortung_Thesen_1,V1,69.0,V1_69,Jeder Laie soll zum AGB und Rechtsexperten werden,x,,,x,,,,,,,,,,,,,,,,,,,,2.0,,69.  Jeder Laie soll zum AGB und Rechtsexperten werden,5.0
+Verantwortung_Thesen_1,V1,70.0,V1_70,Das Fremde wird zum gefühlt Privaten,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,70.  Das Fremde wird zum gefühlt Privaten,5.0
+Verantwortung_Thesen_1,V1,71.0,V1_71,Verhalten im Netz - vs. in der realen Welt,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,71.  Verhalten im Netz - vs. in der realen Welt,5.0
+Verantwortung_Thesen_1,V1,72.0,V1_72,Verantwortungszuordnung: Was ist im Internet neu?,x,x,,,,,,,,,,,,,,,,,,,,,,2.0,,72.  Verantwortungszuordnung: Was ist im Internet neu?,5.0
+Verantwortung_Thesen_1,V1,73.0,V1_73,Verantwortung online geringer als offline,,x,,,,,,,,,,,,,,,,,,,,,,1.0,,73.  Verantwortung online geringer als offline,5.0
+Verantwortung_Thesen_1,V1,74.0,V1_74,Wie neu ist neu + ist neu ein Wert an sich?,,,,,,,,,,,,,,x,,,,,,,,,,1.0,,74.  Wie neu ist neu + ist neu ein Wert an sich?,5.0
+Verantwortung_Thesen_1,V1,75.0,V1_75,"Was ist die aktuelle ""Währung""? (Anzahl Facebook-Freunde, Retweets, Blogeinträge etc.?)",,,,,,,,,,,x,,,,,,,x,,,,,,2.0,,"75.  Was ist die aktuelle “Währung”? (Anzahl Facebook-Freunde, Retweets, Blogeinträge etc.?)",5.0
+Verantwortung_Thesen_1,V1,76.0,V1_76,"Neue Formen menschlicher Beziehungen (global, echtzeit, persistent)",,,,,,,,,,,x,,,,,,,,,,,,,1.0,,"76.  Neue Formen menschlicher Beziehungen (global, echtzeit, persistent)",5.0
+Verantwortung_Thesen_1,V1,77.0,V1_77,Anreiz durch positive Bestärkung,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,77.  Anreiz durch positive Bestärkung,5.0
+Verantwortung_These_2,V2,1.0,V2_01,Muss Weihnachten transparent sein?,,,,,,,,x,,,,,,,,,,,,Intransparenz als Rahmenbedingung?,,,,2.0,,1.       Muss Weihnachten transparent sein?,8.0
+Verantwortung_These_2,V2,2.0,V2_02,"Alternative muss gegeben sein, sonst keine Selbstbestimmung möglich",,,,,,,,,,,,,,,,,,,x,,,,,1.0,,"2.      Alternative muss gegeben sein, sonst keine Selbstbestimmung möglich",8.0
+Verantwortung_These_2,V2,3.0,V2_03,"Falscher Transparenzbegriff. Informationsüberflutung, Konzentration auf neuralgische Punkte",,,,,,,,,,,,,,,,,,,x,,,,,1.0,,"3.      Falscher Transparenzbegriff. Informationsüberflutung, Konzentration auf neuralgische Punkte",8.0
+Verantwortung_These_2,V2,4.0,V2_04,Wo liegen die neuralgischen Punkte?,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,4.      Wo liegen die neuralgischen Punkte?,8.0
+Verantwortung_These_2,V2,5.0,V2_05,Staatsvertrauen,,,,,,,,,x,x,,,,,,,,,,Staatliche Verantwortung,,,,3.0,,5.      Staatsvertrauen,8.0
+Verantwortung_These_2,V2,6.0,V2_06,Was ist die Frage?,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,6.      Was ist die Frage?,8.0
+Verantwortung_These_2,V2,7.0,V2_07,Keine Transparenz ist auch keine Lösung,,,,,,,,x,,,,,,,,,,,,Gezielter Einsatz von Transparenz,,,,2.0,,7.      Keine Transparenz ist auch keine Lösung,8.0
+Verantwortung_These_2,V2,8.0,V2_08,Welche Transparenz ist grundlegend?,,,,,,,,,,,,,,,,x,,,,,,,,1.0,,8.      Welche Transparenz ist grundlegend?,8.0
+Verantwortung_These_2,V2,9.0,V2_09,Druck zur Selbstverpflichtung durch Verantwortungstransparenz erzeugen,,,,,,,,,x,,,,,,,,,,,Verantwortungstransparenz (?),,,,2.0,,9.      Druck zur Selbstverpflichtung durch Verantwortungstransparenz erzeugen,8.0
+Verantwortung_These_2,V2,10.0,V2_10,Transparenz ist nicht gleich Informiertheit,,,,,,,,,,,,,,,,x,,,,,,,,1.0,,10.  Transparenz ist nicht gleich Informiertheit,5.0
+Verantwortung_These_2,V2,11.0,V2_11,Wann Vertrauen Nutzer Diensten?,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,11.  Wann Vertrauen Nutzer Diensten?,5.0
+Verantwortung_These_2,V2,12.0,V2_12,"Je oligopolistischer/monopolistischer der Markt definiert ist, welche Formen der Kontrolle nötig?",,,,,,,,x,,,,,,,,,,x,,Lösung hängt von der Wettbewerbsstruktur ab,,,,3.0,,"12.  Je oligopolistischer/monopolistischer der Markt definiert ist, welche Formen der Kontrolle nötig?",5.0
+Verantwortung_These_2,V2,13.0,V2_13,"Vertrauen beruht auf Reziprozität, Design, Marke, Kundenservice, Utilität",,,,,,,,,x,,,x,,,,,,x,,Stärkung pragmatischer Dimensionen,,,,4.0,,"13.  Reziprozität beruht auf Design, Marke, Kundenservice, Utilität",5.0
+Verantwortung_These_2,V2,14.0,V2_14,"Transparenz als notwendige Vorraussetzung dafür, dass sich der einzelne entscheiden kann",,,,,,,,,x,,,,,,,,,,,Transparenz,,,,2.0,,"14.  Transparenz als notwendige Vorraussetzung dafür, dass sich der einzelne entscheiden kann",5.0
+Verantwortung_These_2,V2,15.0,V2_15,"Grundverständnis nötig, kann auch durch Rechtsnorm gegeben sein.",,,,x,,,,,,,,,,,,,,,,,,,,1.0,,"15.  Grundverständnis nötig, kann auch durch Rechtsnorm gegeben sein.",5.0
+Verantwortung_These_2,V2,16.0,V2_16,Worauf bezieht sich Transparenz? Wie viel sind Daten wert? Was passiert mit den Daten?,x,,,,,,,,,,,,,,,,,x,,,,,,2.0,,16.  Worauf bezieht sich Transparenz? Wie viel sind Daten wert? Was passiert mit den Daten=,5.0
+Verantwortung_These_2,V2,17.0,V2_17,Geschäftsgeheimnisse,,,,,,,,,x,,,,,,,,,,,Geschäftsgeheimnisse als limitierender Faktor des Lösungsraums,,,,2.0,,17.  Geschäftsgeheimnisse,5.0
+Verantwortung_These_2,V2,18.0,V2_18,Woher kommt das Vertrauen in Angebote?,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,18.  Woher kommt das Vertrauen in Angebote?,5.0
+Verantwortung_These_2,V2,19.0,V2_19,"Transparenz ist steigerbar - wenig, mehr, vollständig",,,,,,,,,,,,,,,x,,,,,,,,,1.0,,"19.  Transparenz ist steigerbar - wenig, mehr, vollständig",5.0
+Verantwortung_These_2,V2,20.0,V2_20,"Was sind Anforderungen an Unternehmen? Wenn das nicht definiert ist, gibt es keine Kriterien von Transparenz",,,,,,,,,x,,,,,,,,,,,Klare Formulierung von Anforderungen an Anbieter,,,,2.0,,"20.  Was sind Anforderungen an Unternehmen? Wenn das nicht definiert ist, gibt es keine Kriterien von Transparenz",5.0
+Verantwortung_These_2,V2,21.0,V2_21,Informationsfreiheit,,,,,,,,,,,,,x,x,,,,,,,,,,2.0,,21.  Informationsfreiheit,5.0
+Verantwortung_These_2,V2,22.0,V2_22,Transparenz als Vorstufe,,,,,,,,,x,,,,,,,,,,,,,,,1.0,,22.  Transparenz als Vorstufe,5.0
+Verantwortung_These_2,V2,23.0,V2_23,Von Informations- zu Verstehenssystemen,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,23.  Von Informations- zu Verstehenssystemen,5.0
+Verantwortung_These_2,V2,24.0,V2_24,Überforderung,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,24.  Überforderung,5.0
+Verantwortung_These_2,V2,25.0,V2_25,Optionen - ist ja/nein eine ausreichende Entscheidung,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,25.  Optionen - ist ja/nein eine ausreichende Entscheidung,5.0
+Verantwortung_These_2,V2,26.0,V2_26,Transparenz im Verhältnis zu Eigenverantwortung,,,,,,,,,x,,,,,,,,,,,,,,,1.0,,26.  Transparenz im Verhältnis zu Eigenverantwortung,5.0
+Verantwortung_These_2,V2,27.0,V2_27,"Ist Facebook so wichtig, dass der Staat für eine Alternative/Regulierung sorgen muss?",,,,x,,,,,x,x,,,,,,,,,,Staatliche Alternativen,,,,4.0,,"27.  Ist Facebook so wichtig, dass der Staat für eine Alternative/Regulierung sorgen muss?",5.0
+Verantwortung_These_2,V2,28.0,V2_28,Informationelle Selbstbestimmung keine Lösung,,,,,,,,,x,,,,x,,,,,,,,,,,2.0,,28.  Informationelle Selbstbestimmung keine Lösung,5.0
+Verantwortung_These_2,V2,29.0,V2_29,Medizin → Transparenz/Verantwortung der Ärzte,,,,,,,,,x,,,,,,,,,,,Kodex in Analogie zu ärztlichem Kodex,,,,2.0,,29.  Medizin → Transparenz/ Verantwortung der Ärzte,5.0
+Verantwortung_These_2,V2,30.0,V2_30,Materieller Wert von Informations-Transaktionen,,,,,,,,,,,,,,,,,,x,,,,,,1.0,,30.  Materieller Wert von Informations- Transaktionen,5.0
+Verantwortung_These_2,V2,31.0,V2_31,"Transparenz als notwendiges Mittel für Verständlichkeit → freie Entscheidung, Wahlfreiheit",,,,,,,,,x,,,,,,,,,,,Wahlfreiheit ermöglichen (aber wie?),,,,2.0,,"31.  Transparenz als notwendiges Mittel für Verständlichkeit → freie Entscheidung, Wahlfreiheit",5.0
+Verantwortung_These_2,V2,32.0,V2_32,Andere aushandeln lassen (Beispiel ÖPNV),,,,,,,,,x,,,,,,,,,,,Delegation,,,,2.0,,32.  Andere aushandeln lassen (Beispiel ÖPNV),5.0
+Plattformen_These_1,P1,1.0,P1_01,Keine Vertrauensdebatte bei Facebook?,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,1.      Keine Vertrauensdebatte bei Facebook?,8.0
+Plattformen_These_1,P1,2.0,P1_02,"Bedingungen, damit man Plattformanbietern vertrauen kann",,,,,,,,,,,,x,,,,,,,,,,,,1.0,,"2.      Bedingungen, damit man Plattformanbietern vertrauen kann",8.0
+Plattformen_These_1,P1,3.0,P1_03,Unveräußerliche Rechte,,,,,,,,,,,,,x,,,,,,,,,,,1.0,,3.      unveräußerliche Rechte,8.0
+Plattformen_These_1,P1,4.0,P1_04,Welche Maßstäbe haben wir für Vertrauen?,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,4.      Welche Maßstäbe haben wir für Vertrauen?,8.0
+Plattformen_These_1,P1,5.0,P1_05,Maßstäbe sind nicht fix,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,5.      Maßstäbe sind nicht fix,8.0
+Plattformen_These_1,P1,6.0,P1_06,Vertrauen/Nutzung,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,6.      Vertrauen/Nutzung,8.0
+Plattformen_These_1,P1,7.0,P1_07,"""Chinese Volunteering""",,,,,,,,,,,,,,,,,x,,,,,,,1.0,,7.      “Chinese Volounteering”,8.0
+Plattformen_These_1,P1,8.0,P1_08,"Man kann sich Vertrauen erkaufen durch Features, Nützlichkeit",,,,,,,,,,,,x,,,,,,,,,,,,1.0,,"8.      Man kann sich Vertrauen erkaufen durch Features, Nützlichkeit",8.0
+Plattformen_These_1,P1,9.0,P1_09,Soziales Netz als nutzerorganisierte Plattformen,,,,,,,,,x,,,,,,,,,,,Eigeninitiative von Nutzern; neutrale Angebote,,,,2.0,,9.      Soziales Netz als Nutzer-organisierte Plattformen,8.0
+Plattformen_These_1,P1,10.0,P1_10,Vertrauen als Komplexitätsreduktion,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,10.  Vertrauen als Komplexitätsreduktion,5.0
+Plattformen_These_1,P1,11.0,P1_11,Kann Vertrauen delegieren (im Staat) - nicht bei Plattformen,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,11.  Kann Vertrauen delegieren (im Staat) - nicht bei Plattformen,5.0
+Plattformen_These_1,P1,12.0,P1_12,Komplexitätsreduktion über Marken,,,,,,,,,x,,,,,,,,,,,"Vertrauen auf den Markt, Ausblidung von Marken",,,,2.0,,12.  Komplexitätsreduktion über Marken,5.0
+Plattformen_These_1,P1,13.0,P1_13,Fairness - für Nutzer ist Komplexität gering genug,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,13.  Fairness - für Nutzer ist Komplexität gering genug,5.0
+Plattformen_These_1,P1,14.0,P1_14,"""Man muss nicht vertrauen, denn es gibt rechtliche Regeln"" ist nicht genannt worden.",,,,x,,,,x,,,,x,,,,,,,,Regulierung ist keine Lösung,,,,4.0,,"14.  “Man muss nicht vertrauen, denn es gibt rechtliche Regeln”. Ist nicht genannt worden.",5.0
+Plattformen_These_1,P1,15.0,P1_15,Wertigkeit der Schutzgüter (ist dynamisch),,,,,,,,,,,,,x,,,,,,,,,,,1.0,,15.  Wertigkeit der Schutzgüter (ist dynamisch),5.0
+Plattformen_These_1,P1,16.0,P1_16,Haben wir eine Debatte über Minimalstandards?,,,,,,,,,x,,,,,,,,,,,Minimalstandards (aber diese müssen gesetzt werden),,,,2.0,,16.  Haben wir eine Debatte über Minimalstandards?,5.0
+Plattformen_These_1,P1,17.0,P1_17,Wie funktioniert die Entscheidung?,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,17.  Wie funktioniert die Entscheidung?,5.0
+Plattformen_These_1,P1,18.0,P1_18,Vertrauen als Kundenbindung,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,18.  Vertrauen als Kundenbindung,5.0
+Plattformen_These_1,P1,19.0,P1_19,Wie gestalte ich Erwartungen? z.B. Flugverkehr,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,19.  Wie gestalte ich Erwartungen? z.B. Flugverkehr,5.0
+Plattformen_These_1,P1,20.0,P1_20,Modernes Lehnsrecht,,,,,,,,,x,,,,,,x,,,,,Lehnswesen als Lösungsansatz,,,,3.0,,20.  Modernes Lehnsrecht,5.0
+Plattformen_These_1,P1,21.0,P1_21,Im Netz alles privat- was folgt daraus?,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,21.  Im Netz alles privat- was folgt daraus?,5.0
+Plattformen_These_1,P1,22.0,P1_22,Nutzer müssen Plattformen misstrauen,,,,,,,,,x,,,,,,,,,,,Paranoia,,,,2.0,,22.  Nutzer müssen Plattformen misstrauen,5.0
+Plattformen_These_1,P1,23.0,P1_23,Plattformen können ordnende Funktion einnehmen → Beispiel IOS (Datenschutz),,,,,,,,,x,,,,,,,,,,,,,,,1.0,,23.  Plattformen können ordnende Funktion einnehmen → Beispiel IOS (Datenschutz),5.0
+Plattformen_These_1,P1,24.0,P1_24,Plattformen für unterschiedliche Nutzungshandlungen,,,,,,,,,x,,,,,,,,,,,Ausdifferenzierung der Plattformlandschaft,,,,2.0,,24.  Plattformen für unterschiedliche Nutzungshandlungen,5.0
+Plattformen_These_1,P1,25.0,P1_25,Nicht nur kognitive Kategorie - welche anderen Aspekte spielen eine ROlle,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,25.  Nicht nur kognitive Kategorie - welche anderen Aspekte spielen eine ROlle,5.0
+Plattformen_These_1,P1,26.0,P1_26,"Wenn ausgehandelt wird, was steht nicht zur Verhandlung?",,,,,,,,,,,,,,x,,,,,,,,,,1.0,,"26.  Wenn ausgehandelt wird, was steht nicht zur Verhandlung?",5.0
+Plattformen_These_1,P1,27.0,P1_27,Marken als gesellschaftliche Konstruktion,,,x,,,,,,x,,,,,,,,,,,Ausbildung von Marken,,,,3.0,,27.  Marken als gesellschaftliche Konstruktion,5.0
+Plattformen_These_1,P1,28.0,P1_28,Verantwortung muss korrelieren  mit Erwartung an Verantwortung,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,28.  Verantwortung muss korrelieren  mit Erwartung an Verantwortung,5.0
+Plattformen_These_1,P1,29.0,P1_29,Straßenkampf in der digitalen Begegnung,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,29.  Straßenkampf in der digitalen Begegnung,5.0
+Plattformen_These_1,P1,30.0,P1_30,"Was ist Fairness: Erwartungskonformität, Verlässlichkeit",,,,,,,,,,,,,,,,x,,,,,,,,1.0,,"30.  Was ist Fairness: Erwartungskonformität, Verlässlichkeit",5.0
+Plattformen_These_1,P1,31.0,P1_31,"Vertrauen als ""Währung"", mit der man Utilität bezahlt",x,,,,,,,,,,,x,,,,x,,x,,,,,,4.0,,31.  Vertrauen als “Währung” mit der man Utilität bezahlt,5.0
+Plattformen_These_1,P1,32.0,P1_32,"Welche Anreize können Plattformanbieter bekommen, um Ordnung zu stiften?",,,,,,,,,x,,,,,,,,,,,Incentivierung,,,,2.0,,"32.  Welche Anreize können Plattformanbieter bekommen, um Ordnung zu stiften?",5.0
+Plattformen_These_1,P1,33.0,P1_33,Reale Machtkonstruktionen erforschen,,,,,,,,,,,,,,,,,x,,,,,,,1.0,,33.  Reale Machtkonstruktionen erforschen,5.0
+Plattformen_These_1,P1,34.0,P1_34,Nutzer müssen Plattformanbietern vertrauen können,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,34.  Nutzer müssen Plattformanbietern vertrauen können,5.0
+Plattformen_These_1,P1,35.0,P1_35,Privatisierung öffentlicher Räume,x,,,x,,,,,,,,,,,,,,,,,,,,2.0,,35.  Privatisierung öffentlicher Räume,5.0
+Plattformen_These_1,P1,36.0,P1_36,Wer garantiert die Würde (und was ist das?),,,,,,,,,,,,,x,,,,,,,,,,,1.0,,36.  Wer garantiert die Würde (und was ist das?),5.0
+Plattformen_These_1,P1,37.0,P1_37,"Vertrauens- und Erwartungshaltung, die nicht enttäuscht werden will?",,,,,,,,,,,,x,,,,,,,,,,,,1.0,,"37.  Vertrauens- und Erwartungshaltung, die nicht enttäuscht werden will?",5.0
+Plattformen_These_1,P1,38.0,P1_38,Appellativ: Du kannst mir vertrauen!,,,,,,,,,,,,x,,,,,,,,,,,,1.0,,38.  Appellativ: Du kannst mir vertrauen!,5.0
+Plattformen_These_1,P1,39.0,P1_39,Fürsorgepflicht,,,,x,,,,,,,,,,,,,,,,,,,,1.0,,39.  Fürsorgepflicht,5.0
+Plattformen_These_1,P1,40.0,P1_40,"Verschiedene Inhalte: Vertrauen ggf. Richtigkeit von Infos, Datenschutz etc.",,,,,,,,,,,,x,,,,,,,,,,,,1.0,,"40.  Verschiedene Inhalte: Vertrauen ggf. Richtigkeit vin Infos, Datenschutz etc.",5.0
+Plattformen_These_2,P2,1.0,P2_01,Social Network ist kein privater Raum,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,1.      Social Network ist kein privater Raum,8.0
+Plattformen_These_2,P2,2.0,P2_02,Nur begrenzte Inhaltskontrolle (keine Willkür),,,,x,,,,,,,,,,,,,,,,,,,,1.0,,2.      Nur begrenzte Inhaltskontrolle (keine Willkür),8.0
+Plattformen_These_2,P2,3.0,P2_03,"Meinungsfreiheit: Anspruch gegenüber Plattformenbetreiber oder gegenüber Staat, der reguliert",,,,x,,,,,x,,,,x,,,,,,,Grundrechtliche Absicherung,,,,4.0,,"3.      Meinungsfreiheit: Anspruch gegenüber Plattformenbetreiber oder gegenüber Staat, der reguliert",8.0
+Plattformen_These_2,P2,4.0,P2_04,Plattformen müssen sich bekennen → bin ich neutral oder nicht?,,,,,,,,,x,,,,,,,,,,,,,,,1.0,,4.      Plattformen müssen sich bekennen → bin ich neutral oder nicht?,8.0
+Plattformen_These_2,P2,5.0,P2_05,Spezifisches Medienkontrollrecht,,,,x,,,,,x,,,,,,,,,,,Regulierung,,,,3.0,,5.      Spezifisches Medienkontrollrecht,8.0
+Plattformen_These_2,P2,6.0,P2_06,Kommunikationsinteressen geht immer vor Privatinteressen,,,,,,,,,,,,,,,x,,,,,,,,,1.0,,6.      Kommunikationsinteressen geht immer vor Privatinteressen,8.0
+Plattformen_These_2,P2,7.0,P2_07,"Wenn öffentlicher Raum, dann Meinungsfreiheit - Was bedeutet das? z.B. Realnamenspflicht",,,,,,,,,x,,,,,,,,,,,Realnamenspflicht,,,,2.0,,"7.      Wenn öffentlicher Raum, dann Meinungsfreiheit - Was bedeutet das? z.B. Realnamenspflicht",8.0
+Plattformen_These_2,P2,8.0,P2_08,"Unmittelbare Grundrechtbindung? Bei Facebook, Google etc.",,,,x,,,,,x,,,,x,,,,,,,Grundrechtliche Absicherung,,,,4.0,,"8.      Unmittelbare Grundrechtbindung? Bei Facebook, Google etc.",8.0
+Plattformen_These_2,P2,9.0,P2_09,Marktbeherrschung anstreben reicht nicht aus,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,9.      Marktbeherrschung anstreben reicht nicht aus,8.0
+Plattformen_These_2,P2,10.0,P2_10,Handlungsfreiheit Hausrecht/Geschäftsbedingungen,,,,x,,,,,,,,,,,,,,,,,,,,1.0,,10.  Handlungsfreiheit Hausrecht/Geschäftsbedingungen,5.0
+Plattformen_These_2,P2,11.0,P2_11,Meinungsfreiheit der Nutzer vs. Meinungfreiheit  der Plattformanbieter,,,,,,,,,,,,,x,,,,x,,,,,,,2.0,,11.  Meinungsfreiheit der Nutzer vs. Meinungfreiheit  der Plattformanbieter,5.0
+Plattformen_These_2,P2,12.0,P2_12,Zerschlagung ist denkbar/möglich,,,,x,,,,,x,,,,,,,,,,,Sanktionierung durch Zerschlagung,,,,3.0,,12.  Zerschlagung ist denkbar/möglich,5.0
+Plattformen_These_2,P2,13.0,P2_13,Kommunikation als essenzielle Ressource,,,,,,,,,,,,,,,,,,,x,,,,,1.0,,13.  Kommunikation als essenzielle Ressource,5.0
+Plattformen_These_2,P2,14.0,P2_14,Annonymität/Kennzeichnungspflicht,,,,,,,,x,,,,,,,,,,,,,,,,1.0,,14.  Annonymität/ Kennzeichnungspflicht,5.0
+Plattformen_These_2,P2,15.0,P2_15,Essentialität wird unterstellt (bei Facebook nicht),,,,,,,,,,,,,,,,,,,x,,,,,1.0,,15.  Essentialität wird unterstellt (bei Facebook nicht),5.0
+Plattformen_These_2,P2,16.0,P2_16,Entgrenzungsprozesse,x,,x,,,,,,,,,,,,,,,,,,,,,2.0,,16.  Entgrenzungsprozesse,5.0
+Plattformen_These_2,P2,17.0,P2_17,"Welchen Anspruch haben wir an den Kodex? Nicht international, sondern für Deutschland",,,,,x,,,,,,,,,,,,,,,,,,,1.0,,"17.  Welchen Anspruch haben wir an den Kodex? Nicht international, sondern für Deutschland",5.0
+Plattformen_These_2,P2,18.0,P2_18,Meinungsfreiheit als Abwehrrecht gegen den Staat  - neue Fragen bei digitalen Räumen,,,,x,,,,,,,,,x,,,,,,,,,,,2.0,,18.  Meinungsfreiheit als Abwehrrecht gegen den Staat  - neue Fragen bei digitalen Räumen,5.0
+Plattformen_These_2,P2,19.0,P2_19,"Was ist ein öffentlicher Raum? Flughafen, Presse",x,,,x,,,,,x,,,,,,,,,,,"Regelung in Analogie zu Räumen wie Flughäfen, Bahnhöfen",,,,4.0,,"19.  Was ist ein öffentlicher Raum? Flughafen, Presse",5.0
+Plattformen_These_2,P2,20.0,P2_20,Wessen Haus ist das hier? Hausrecht z.B. China: staatliche Betriebe,,,,x,,,,,,,,,,,,,x,,,,,,,2.0,,20.  Wessen Haus ist das hier? Hausrecht z.B. China- staatliche Betriebe,5.0
+Plattformen_These_2,P2,21.0,P2_21,Welche Räume müssen geschützt werden?,,,,,,,,,x,,,,,,,x,,,,Schützen spezifischer Räume,,,,3.0,,21.  Welche Räume müssen geschützt werden?,5.0
+Plattformen_These_2,P2,22.0,P2_22,Globale Produkte/Anbieter haben kein Interesse an Differenzierung,x,,,,,,,,,,,,,,,,,,,,,,,1.0,,22.  Globale Produkte/Anbieter haben kein Interesse an Differenzierung,5.0
+Plattformen_These_2,P2,23.0,P2_23,Welche Mitsprache bei welcher Plattformen? Beispiel öffentlich rechtlich,,,,,,,,x,,,,,,,,,,,,,,,,1.0,,23.  Welche Mitsprache bei welcher Plattformen? Beispiel öffentlich rechtlich,5.0
+Plattformen_These_2,P2,24.0,P2_24,"Gibt es Notwendigkeit, Normen und Werte zu erhalten auch auf Plattformen? Ja? Wie?",,,,,,,,,,,,,,x,,,,,,,,,,1.0,,"24.  Gibt es Notwendigkeit, Normen und Werte zu erhalten auch auf Plattformen? Ja? Wie?",5.0
+Plattformen_These_2,P2,25.0,P2_25,Fehlende Internationalität von Werten,x,,,,,,,,,,,,,x,,,,,,,,,,2.0,,25.  Fehlende Internationalität von Werten,5.0
+Plattformen_These_2,P2,26.0,P2_26,Wie Selbstregulierung zu diesem Ziel fördern? Anreize?,,,,,,,,,x,,,,,,,,,,,Selbstregulierung,,,,2.0,,26.  Wie Selbstregulierung zu diesem Ziel fördern? Anreize?,5.0
+Plattformen_These_2,P2,27.0,P2_27,Durchsetzungsschwierigkeiten in sanktionsorientierten Regulierungssystemen,,,,x,,,,,,,,,,,,,,,,,,,,1.0,,27.  Durchsetzungsschwierigkeiten in sanktionsorientierten Regulierungssystemen,5.0

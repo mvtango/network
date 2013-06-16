@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Workshop</title>
+<style>
+
+@import url(./css/style.css);
+
+.background {
+  fill: #eee;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+line.link-tt {
+		stroke-width: 4px;
+		opacity: 0;
+	}
+
+line.link-it {
+		stroke: #E0E0E0;
+		stroke-width: 1px;
+		opacity: 0.3;
+		}
+
+circle.nodec-t {
+			stroke-width: 1px;
+			stroke: #808080;
+			opacity: .4;
+		}
+
+circle.nodec-i {
+			opacity: .4
+		}
+
+text.label {
+		opacity: 0;
+	}
+
+
+circle:hover {
+		opacity: 1;
+}
+
+circle:hover+text.label {
+		opacity: 1;
+}
+
+
+.nodetext {
+	font-size: 6px;
+	font-family: Arial, Tahoma;
+	
+}
+
+div.outer { width: 148px; height: 18px; display:table;  overflow: hidden; padding: 2px; margin: 2px; }
+
+div.inner {
+	display: table-cell;
+	font-size: 12px;
+	line-height: 10px;
+	font-family: Tahoma, Arial, Sans;
+	vertical-align: middle; 
+	height: 12px;
+	overflow: hidden;
+	padding: 0;
+	cursor: pointer;
+}
+
+
+
+</style>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/underscore.min.js"></script>
+<script src="js/tabletop.js"></script>
+<script src="js/jquery-1.9.1.js"></script> 
+<script src="js/jquery.aciPlugin.min.js"></script>
+<script src="js/jquery.aciFragment.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.js"></script>
+ 
+ 
+<link href="css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+ 
+<header>
+  <aside>13. 6. 2013</aside>
+  inspired by <a href="http://bost.ocks.org/mike/miserables/" rel="author">Mike Bostock</a>
+</header>
+
+<h1>Workshop</h1>
+
+<aside style="margin-top:80px;">
+<p><i>Erklärung</i></p>
+<p>Gebaut mit  <a href="http://d3js.org/">d3.js</a>.
+</aside>
+
+<script>
+
+var debug=true;
+
+var width = 800,
+    height = 800;
+
+var  svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var force = d3.layout.force()
+    .charge(-120)
+    .linkDistance(30)
+    .size([width, height]);
+
+var frag=$(document).aciFragment("api");
+
+
+function do_log(m) {
+	console.log(m);
+	$("#log").append("<li>"+m+"</li>");
+}
+
+function makesettings(l) {
+	var r={};
+	_.each(l, function(e) {
+		var v;
+		try {
+			v=(new Function("return ("+e.value+")"))();
+		} catch(ex) {
+			do_log("settings["+e.name+"] - '"+e.value+"' taken as literal. Evaluating yielded: "+ex); 
+			v=e.value;
+		};
+		r[e.name]=v;
+	});
+	return r;
+}
+
+
+Tabletop.init({key: frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: init });
+										
+										
+										
+function init(data) {
+		var settings=makesettings(data.settings.elements);
+		var topics={};
+		var nodes=[];
+		var links=[];
+		var matrix=data.matrix;
+		if (debug) {
+			window.settings=settings;
+			window.matrix=matrix;
+			window.topics=topics;
+			window.nodes=nodes;
+			window.links=links;
+			window.svg=svg;
+		}
+		//
+		//
+		// Nodes from Column Headers
+		//
+		var start=settings.startheader.charCodeAt(0)-"A".charCodeAt(0);
+		// do_log("-"+matrix.column_labels.length+"-");
+		links.push({source: matrix.column_labels.length-1, target: 0, type : "tt" });
+		_(matrix.column_labels).each(function(e,i) {
+			if (i>=start) {
+				var n=matrix.column_names[i];
+				topics[n]={ count: 0, sum : 0, id : "t"+i, name: e, index: nodes.length, color: settings.colors[i % settings.colors.length], items: [] }
+				nodes.push({name : topics[n].id, type: "t", data: topics[n]});
+				if (nodes.length>1) {
+					links.push({source : parseInt(nodes.length-1), target : parseInt(nodes.length-2), type: "tt" });
+				}
+			}
+		});
+		_(matrix.elements).each(function(d,i) {
+			var o={ id: d.id, name: d.wortmeldung, topics: [], count : d.anzahl, color: "#000000"	 };
+						   source=nodes.length;
+						   _(matrix.column_names).each(function(n) {
+								if (d[n]=="x") {
+									o.topics.push(topics[n])
+									topics[n].count+=1;
+									topics[n].sum+=parseInt(d.anzahl);
+									topics[n].items.push(o);
+									links.push({ source: source, target: topics[n].index, type : "it", color : topics[n].color });
+								}
+						   });
+						 nodes.push({ name: o.id, type : "i", data: o});
+		});
+		force.nodes(nodes).links(links).start();
+		var link = svg.selectAll(".link")
+						   .data(links)
+						   .enter().append("line")
+						   .attr("class", function (d) { return "link link-"+d.type });
+						   // .attr("stroke", function (d) { if (d.type=='it' ) { return d.color } else { return "#000000" } });
+		var node = svg.selectAll(".node")
+						 .data(nodes)
+						 .enter()
+						 .append("svg:g")
+						 .attr("class","nodeg")
+						 .call(force.drag);
+						 
+						 
+					 node.append("svg:circle")
+						 .attr("r", function (d) { 
+								if (d.type=='t') { 
+									return d.data.sum * 0.4 
+								} else { 
+									return d.data.count+2; 
+								} 
+						  })
+						 .attr("class", function (d) { return "nodec nodec-"+d.type })
+						 .attr("fill", function (d) {
+							  if (d.type=='t') {
+								return d.data.color;
+							  } else {
+								if (d.data.topics.length==1) {
+									return d.data.topics[0].color;
+								}  else {
+									return "#990000";
+								}
+							  } 
+							  
+						  });
+/*				node.append("foreignObject")
+					.attr("x", 16 ) 
+					.attr("y", -10) 
+					.attr("width", 150)
+					.attr("height", 36)
+					.append("xhtml:body")
+					.append("div")
+					.append("div")
+					.attr("class","outer")
+					.attr("data-id", function(d) { return d.id })
+					.append("div")
+					.attr("class","inner")
+					.text(function(d) { return d.data.name; });
+*/ 
+				
+				node.append("text")					
+					.attr("x", 16 ) 
+					.attr("y", -10) 
+					.attr("width", 150)
+					.attr("height", 36)
+					.style("text-anchor","middle")
+					.attr("class","label")
+					.text(function(d) { return d.data.name; });
+				
+					
+				if (debug) {
+					window.node=node;
+				}
+				node.append("title")
+							.text(function(d) {
+								n=d.data.name; 
+								if (d.type=='i') {
+									n+="\rAnzahl: " + d.data.count;
+								} else {
+									n+="\r"+d.data.count+" Wortmeldungen\rAnzahl gesamt: "+d.data.sum;
+								}
+								return n 
+				});
+	force.on("tick", function() {
+		link.attr("x1", function(d) { return d.source.x; })
+			.attr("y1", function(d) { return d.source.y; })
+			.attr("x2", function(d) { return d.target.x; })
+			.attr("y2", function(d) { return d.target.y; });
+			
+		node.attr("transform",function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+/*		node.select("circle").attr("cx", function(d) { return d.x; })
+							 .attr("cy", function(d) { return d.y; });
+		node.select("foreignobject").attr("x", function(d) { return d.x; })
+							.attr("y", function(d) { return d.y; });
+*/
+	});
+	
+
+}
+
+
+		
+		
+
+</script>
+
+<footer> 
+  <div style="width: 80%; align: left">
+    <ul id="log"></ul>
+  </div>
+  <aside>13. Juli 2013</aside>
+  
+</footer>
