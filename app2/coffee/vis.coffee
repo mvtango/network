@@ -143,6 +143,7 @@ Network = () ->
   network = (selection, data) ->
     # format our data
     allData = setupData(data)
+   
 
     # create our svg and groups
     vis = d3.select(selection).append("svg")
@@ -174,8 +175,8 @@ Network = () ->
     # sort nodes based on current sort and update centers for
     # radial layout
     if layout == "radial"
-      artists = sortedArtists(curNodesData, curLinksData)
-      updateCenters(artists)
+      categories = sortedCategories(curNodesData, curLinksData)
+      updateCenters(categories)
 
     # reset nodes in force layout
     force.nodes(curNodesData)
@@ -246,28 +247,33 @@ Network = () ->
   # Returns modified data
   setupData = (data) ->
     # initialize circle radius scale
-    countExtent = d3.extent(data.nodes, (d) -> d.playcount)
+    countExtent = d3.extent(data.nodes, (d) -> d.data.count)
     circleRadius = d3.scale.sqrt().range([3, 12]).domain(countExtent)
-
     data.nodes.forEach (n) ->
       # set initial x/y to values within the width/height
       # of the visualization
       n.x = randomnumber=Math.floor(Math.random()*width)
       n.y = randomnumber=Math.floor(Math.random()*height)
       # add radius to the node so we can use it later
-      n.radius = circleRadius(n.playcount)
+      n.radius = circleRadius(n.data.count)
 
     # id's -> node objects
     nodesMap  = mapNodes(data.nodes)
 
     # switch links to point to node objects instead of id's
     data.links.forEach (l) ->
-      l.source = nodesMap.get(l.source)
+      l.source = nodesMap.get(l.source) 
       l.target = nodesMap.get(l.target)
-
+      if typeof l.source == "undefined"
+        log "link #{l.id} has no valid source"
+      if typeof l.target == "undefined"
+        log "link #{l.id} has no valid target"
       # linkedByIndex is used for link sorting
-      linkedByIndex["#{l.source.id},#{l.target.id}"] = 1
-
+      try
+        linkedByIndex["#{l.source.id},#{l.target.id}"] = 1
+      catch e
+        log("Fehler "+e+l.source)
+    
     data
 
   # Helper function to map node id's to node objects.
@@ -275,7 +281,10 @@ Network = () ->
   mapNodes = (nodes) ->
     nodesMap = d3.map()
     nodes.forEach (n) ->
-      nodesMap.set(n.id, n)
+      if typeof n.id != "undefined" 
+        nodesMap.set(n.id, n)
+      else 
+        log "Node #{n.data.name} has no id"  
     nodesMap
 
   # Helper function that returns an associative array
@@ -284,8 +293,8 @@ Network = () ->
   nodeCounts = (nodes, attr) ->
     counts = {}
     nodes.forEach (d) ->
-      counts[d[attr]] ?= 0
-      counts[d[attr]] += 1
+      counts[d.data[attr]] ?= 0
+      counts[d.data[attr]] += 1
     counts
 
   # Given two nodes a and b, returns true if
@@ -313,37 +322,29 @@ Network = () ->
 
   # Returns array of artists sorted based on
   # current sorting method.
-  sortedArtists = (nodes,links) ->
-    artists = []
-    if sort == "links"
-      counts = {}
-      links.forEach (l) ->
-        counts[l.source.artist] ?= 0
-        counts[l.source.artist] += 1
-        counts[l.target.artist] ?= 0
-        counts[l.target.artist] += 1
-      # add any missing artists that dont have any links
-      nodes.forEach (n) ->
-        counts[n.artist] ?= 0
+  sortedCategories = (nodes,links) ->
+    categories = []
+    counts={}
+    nodes.forEach (n) ->
+      counts[n.data.category] ?=0
+      counts[n.data.category] +=1
+    # sort based on counts
+    categories = d3.entries(counts).sort (a,b) ->
+      b.value - a.value
+    console.log(categories)
+    # get just names
+    # categories = categories.map (v) -> v.name
+    # else
+    #  counts = nodeCounts(nodes, "count")
+    #  categories = d3.entries(counts).sort (a,b) ->
+    #    b.value - a.value
+    #  categories = categories.map (v) -> v.name
+    categories.map (v) -> v.key
 
-      # sort based on counts
-      artists = d3.entries(counts).sort (a,b) ->
-        b.value - a.value
-      # get just names
-      artists = artists.map (v) -> v.key
-    else
-      # sort artists by song count
-      counts = nodeCounts(nodes, "artist")
-      artists = d3.entries(counts).sort (a,b) ->
-        b.value - a.value
-      artists = artists.map (v) -> v.key
-
-    artists
-
-  updateCenters = (artists) ->
+  updateCenters = (categories) ->
     if layout == "radial"
       groupCenters = RadialPlacement().center({"x":width/2, "y":height / 2 - 100})
-        .radius(300).increment(18).keys(artists)
+        .radius(300).increment(18).keys(categories)
 
   # Removes links from allLinks whose
   # source or target is not present in curNodes
@@ -362,10 +363,24 @@ Network = () ->
       .attr("class", "node")
       .attr("cx", (d) -> d.x)
       .attr("cy", (d) -> d.y)
-      .attr("r", (d) -> d.radius)
-      .style("fill", (d) -> nodeColors(d.artist))
+      .attr "r", (d) -> 
+        if d.type == 'i' 
+          d.radius
+        else 
+          d.radius*3
+      .style("fill", (d) -> d.data.color)
+      .style "fill-opacity", (d) -> 
+        if d.type == "i" 
+          1.0 
+        else 
+          0.4
       .style("stroke", (d) -> strokeFor(d))
-      .style("stroke-width", 1.0)
+      .style "stroke-width", (d) ->
+        if d.type == "i" 
+          1.0
+        else 
+          d.radius / 2
+      .call force.drag
 
     node.on("mouseover", showDetails)
       .on("mouseout", hideDetails)
@@ -436,7 +451,7 @@ Network = () ->
   moveToRadialLayout = (alpha) ->
     k = alpha * 0.1
     (d) ->
-      centerNode = groupCenters(d.artist)
+      centerNode = groupCenters(d.data.category)
       d.x += (centerNode.x - d.x) * k
       d.y += (centerNode.y - d.y) * k
 
@@ -444,11 +459,15 @@ Network = () ->
   # Helper function that returns stroke color for
   # particular node.
   strokeFor = (d) ->
-    d3.rgb(nodeColors(d.artist)).darker().toString()
+    d3.rgb(d.data.color).darker().toString()
 
   # Mouseover tooltip function
   showDetails = (d,i) ->
-    content = '<p class="main">' + d.name + '</span></p>'
+    if d.type == "i" 
+      content='<p class="main"><span> Wortmeldung "'+d.data.name+'"</span></p>'
+    else
+      content='<p class="main"><span> #{d.data.name}</span></p>'
+
     content += '<hr class="tooltip-hr">'
     content += '<p class="main">' + d.artist + '</span></p>'
     tooltip.showTooltip(content,d3.event)
@@ -525,9 +544,8 @@ $ ->
 
   Tabletop.init key : frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: (data) -> 
     settings = makesettings data.settings.elements
-    data = makedata data.matrix, settings
-    window.data=data
- 
+    window.data=makedata(data.matrix, settings)
+    myNetwork("#vis", window.data)
 
   makesettings = (list) ->
     r={}
@@ -540,9 +558,12 @@ $ ->
       r[e.name]=v
     r
 
-  makeid = (index) ->
-    "id"+index
-
+  makeid = (index,prefix) ->
+    if prefix?
+      prefix+index
+    else 
+      "id"+index
+	
   makedata = (matrix,settings) ->
     topics={};
     nodes=[];
@@ -554,29 +575,32 @@ $ ->
       window.nodes=nodes;
     start=settings.startheader.charCodeAt(0)-"A".charCodeAt(0)
     links.push
-      source : makeid matrix.column_labels.length-1
+      source : makeid matrix.column_labels.length-(start+1)
       target : makeid 0
       type   : "tt" 
+      id	 : makeid(links.length,"l")
     _(matrix.column_labels).each (e,i) ->
       if i>=start
         n=matrix.column_names[i];
-        log "set topic "+n
         topics[n] = 
           count	: 0
           sum 	: 0
-          id 	: makeid i
+          id 	: makeid nodes.length
           name	: e
           index	: nodes.length
           color	: settings.colors[i % settings.colors.length]
           items	: []
+        topics[n].category=topics[n].id
         nodes.push
-          name 	: topics[n].id
+          id 	: topics[n].id
           type	: "t"
           data	: topics[n] 
         if nodes.length>1
           links.push 
-            source 	: makeid i-1
-            target	: makeid i-2 
+            source 	: makeid nodes.length-1
+            target	: makeid nodes.length-2 
+            type	: "tt"
+            id		: makeid(links.length,"l")
     _(matrix.elements).each (d,i) ->
       o= 
         id		: d.id
@@ -588,6 +612,7 @@ $ ->
       _(_(topics).keys()).each (n) ->
         if (typeof d[n] != "undefined") && (d[n])
           o.topics.push topics[n]
+          o.category=topics[n].category
           topics[n].count+=1
           topics[n].sum+=parseInt d.anzahl
           topics[n].items.push o
@@ -596,8 +621,12 @@ $ ->
             target: topics[n].id
             type : "it"
             color : topics[n].color
+      if o.topics.length > 1 
+        o.color="#000000"
+      else 
+        o.color=o.topics[0].color
       nodes.push
-        name	: o.id
+        id		: o.id
         type 	: "i"
         data	: o
     r =      
