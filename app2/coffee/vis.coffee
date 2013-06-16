@@ -102,11 +102,11 @@ RadialPlacement = () ->
   return placement
 
 Network = () ->
+  # allData stores the unfiltered data
   # variables we want to access
   # in multiple places of Network
   width = 960
   height = 800
-  # allData will store the unfiltered data
   allData = []
   curLinksData = []
   curNodesData = []
@@ -496,6 +496,7 @@ activate = (group, link) ->
   d3.select("##{group} ##{link}").classed("active", true)
 
 $ ->
+  # nach dem Spreadsheet  
   myNetwork = Network()
 
   d3.selectAll("#layouts a").on "click", (d) ->
@@ -513,14 +514,92 @@ $ ->
     activate("sorts", newSort)
     myNetwork.toggleSort(newSort)
 
-  $("#song_select").on "change", (e) ->
-    songFile = $(this).val()
-    d3.json "data/#{songFile}", (json) ->
-      myNetwork.updateData(json)
-  
   $("#search").keyup () ->
     searchTerm = $(this).val()
     myNetwork.updateSearch(searchTerm)
 
-  d3.json "data/call_me_al.json", (json) ->
-    myNetwork("#vis", json)
+  ## key: 
+    	
+  
+  frag=$(document).aciFragment "api"
+
+  Tabletop.init key : frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: (data) -> 
+    settings = makesettings data.settings.elements
+    data = makedata data.matrix, settings
+    window.data=data
+ 
+
+  makesettings = (list) ->
+    r={}
+    _.each list, (e) -> 
+  	  try
+  	    v=(new Function("return ("+e.value+")"))()
+      catch ex
+        log "settings["+e.name+"] - '"+e.value+"' taken as literal. Evaluating yielded: "+ex 
+        v=e.value
+      r[e.name]=v
+    r
+
+  makeid = (index) ->
+    "id"+index
+
+  makedata = (matrix,settings) ->
+    topics={};
+    nodes=[];
+    links=[];
+    if window.debug
+      window.settings=settings;
+      window.matrix=matrix;
+      window.topics=topics;
+      window.nodes=nodes;
+    start=settings.startheader.charCodeAt(0)-"A".charCodeAt(0)
+    links.push
+      source : makeid matrix.column_labels.length-1
+      target : makeid 0
+      type   : "tt" 
+    _(matrix.column_labels).each (e,i) ->
+      if i>=start
+        n=matrix.column_names[i];
+        log "set topic "+n
+        topics[n] = 
+          count	: 0
+          sum 	: 0
+          id 	: makeid i
+          name	: e
+          index	: nodes.length
+          color	: settings.colors[i % settings.colors.length]
+          items	: []
+        nodes.push
+          name 	: topics[n].id
+          type	: "t"
+          data	: topics[n] 
+        if nodes.length>1
+          links.push 
+            source 	: makeid i-1
+            target	: makeid i-2 
+    _(matrix.elements).each (d,i) ->
+      o= 
+        id		: d.id
+        name	: d.wortmeldung
+        topics	: []
+        count 	: d.anzahl
+        color	: "#000000"
+      source=d.id;
+      _(_(topics).keys()).each (n) ->
+        if (typeof d[n] != "undefined") && (d[n])
+          o.topics.push topics[n]
+          topics[n].count+=1
+          topics[n].sum+=parseInt d.anzahl
+          topics[n].items.push o
+          links.push 
+            source: source
+            target: topics[n].id
+            type : "it"
+            color : topics[n].color
+      nodes.push
+        name	: o.id
+        type 	: "i"
+        data	: o
+    r =      
+      nodes: nodes
+      links: links
