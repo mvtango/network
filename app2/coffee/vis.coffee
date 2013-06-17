@@ -17,9 +17,14 @@ RadialPlacement = () ->
 
   # Given an center point, angle, and radius length,
   # return a radial position for that angle
-  radialLocation = (center, angle, radius) ->
-    x = (center.x + radius * Math.cos(angle * Math.PI / 180))
-    y = (center.y + radius * Math.sin(angle * Math.PI / 180))
+  radialLocation = (center, angle, radius) -> 
+    r=radius
+    if typeof r.x == "undefined"
+      r = 
+        x : radius
+        y : radius
+    x = (center.x + r.x * Math.cos(angle * Math.PI / 180))
+    y = (center.y + r.y * Math.sin(angle * Math.PI / 180))
     {"x":x,"y":y}
 
   # Main entry point for RadialPlacement
@@ -356,7 +361,7 @@ Network = () ->
   updateCenters = (categories) ->
     if layout == "radial"
       groupCenters = RadialPlacement().center({"x":width/2, "y":height / 2 - 100})
-        .radius((height/2)-100).increment(18).keys(categories)
+        .radius({ y : (height/2)-10, x: (width /2)-10 }).increment(18).keys(categories)
 
   # Removes links from allLinks whose
   # source or target is not present in curNodes
