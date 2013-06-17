@@ -229,7 +229,7 @@ Network = () ->
   # from search
   network.updateSearch = (searchTerm) ->
     searchRegEx = new RegExp(searchTerm.toLowerCase())
-    total = 0
+    total = []
     node.each (d) ->
       element = d3.select(this)
       match = d.data.name.toLowerCase().search(searchRegEx)
@@ -237,15 +237,21 @@ Network = () ->
         element.style("fill", "#FF0")
           .style("stroke", "#000")
         d.searched = true
-        total++
+        total.push(d)
       else
         d.searched = false
         element.style("fill", (d) -> d.data.color )
           .style("stroke", (d) -> strokeFor(d) )
-      if total == 0 
-        $("#searched").html("")
+    if total.length == 0 
+      $("#searched").html("")
+    else 
+      if total.length < 7
+        l = ''
+        total.forEach (i) -> 
+          l += "<a href=\"#\" onClick=\"nw.show(&quot;#{i.id}&quot);\">#{i.id}</a>"
       else 
-        $("#searched").html(total+" Mal gefunden");
+        l = ''
+      $("#searched").html("#{ total.length } Treffer #{l}");
 
   network.updateData = (newData) ->
     allData = setupData(newData)
@@ -254,8 +260,28 @@ Network = () ->
     update()
 
 
-  network.hilight = (r,d) ->
-    showDetails.apply(r,d)
+  network.show = (ids) ->
+    f=_(curNodesData).find (n) ->
+      n.id==ids
+    if f 
+      a=f
+      force.stop()
+      g=$("#g"+a.id)
+      o=g.offset()
+      d=d3.select("#g"+a.id)
+      showDetails(a,null,{ pageX : o.left, pageY : o.top })
+      vis=d3.select("svg")
+      $("circle.highlight").remove()
+      d3.select("svg").append("circle")
+        .attr("class","highlight")
+        .attr("r",parseFloat(d.attr("r"))+10)
+        .attr("cx",parseFloat(d.attr("cx")))
+        .attr("cy",parseFloat(d.attr("cy")))
+        .style("fill","#ffff00")
+        .style("opacity",.5)
+        .transition({complete : () -> this.remove() }).duration(2000).style("opacity" : 0 ).attr("r", 0);
+    else 
+      tooltip.hideTooltip()
 
   # called once to clean up raw data and switch links to
   # point to node instances
@@ -378,6 +404,7 @@ Network = () ->
 
     node.enter().append("circle")
       .attr("class", (d) -> "node node-"+d.type)
+      .attr("id", (d) -> "g"+d.id)
       .attr("cx", (d) -> d.x)
       .attr("cy", (d) -> d.y)
       .attr "r", (d) -> 
@@ -484,11 +511,11 @@ Network = () ->
       "#FF00FF"
 
   # Mouseover tooltip function
-  showDetails = (d,i) ->
+  showDetails = (d,i,fakeEvent) ->
     if d.type == 'i'
-      tooltip.showTooltip(renderer.render("gedanke",d),d3.event)
+      tooltip.showTooltip(renderer.render("gedanke",d),fakeEvent || d3.event)
     else
-      tooltip.showTooltip(renderer.render("thema",d),d3.event)
+      tooltip.showTooltip(renderer.render("thema",d),fakeEvent || d3.event)
     # higlight connected links
     if link
       link.attr("stroke", (l) ->
@@ -508,7 +535,7 @@ Network = () ->
       if (n.searched or neighboring(d, n)) then "#555" else strokeFor(n))
   
     # highlight the node being moused over
-    d3.select(this).style("stroke","black")
+    d3.select("#g"+d.id).style("stroke","black")
 
   # Mouseout function
   hideDetails = (d,i) ->
@@ -558,11 +585,13 @@ $ ->
   
   frag=$(document).aciFragment "api"
 
-  Tabletop.init key : frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: (data) -> 
-    settings  = makesettings data.settings.elements
-    templates = makesettings data.templates.elements
-    data	  = makedata(data.matrix, settings)
+  Tabletop.init key : frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: (dt) -> 
+    settings  = makesettings dt.settings.elements
+    templates = makesettings dt.templates.elements
     window.renderer=ECT({ root: templates })
+    data	  = makedata(dt.matrix, settings)
+    window.tour	  = maketour(dt.tour.elements,data.nodes)
+ 
     $("h1").fadeOut
       complete : () ->
         $("h1").html(settings.title).fadeIn()
@@ -629,7 +658,8 @@ $ ->
         name	: d.wortmeldung
         topics	: []
         count 	: d.anzahl
-        color	: "#000000"
+        color	: "#990000"
+        loesung : d["lösungsansätze"]
       source=d.id;
       _(_(topics).keys()).each (n) ->
         if (typeof d[n] != "undefined") && (d[n])
@@ -644,7 +674,7 @@ $ ->
             type : "it"
             color : topics[n].color
       if o.topics.length > 1 
-        o.color="#000000"
+        o.color="#990000"
       else 
         o.color=o.topics[0].color
       nodes.push
@@ -661,4 +691,43 @@ $ ->
     r =      
       nodes: nodes
       links: links
+      
 
+  maketour = (entries,nodes) ->
+    $t=$("#tour-container")
+    $t.data({ current : 0 })
+    c=1
+    items=[]
+    entries.forEach (e,i) ->
+      n=_(nodes).find (n) ->
+        n.id==e.id
+      if n
+        $t.append(renderer.render("tour",{ bemerkung : e.bemerkung, i: c, node : n}))
+        items.push({ el : $("#tour-item-#{c}"), node: n.id })
+        c++
+    $t.data({"items" : items})
+    tour = (n) ->
+      $t=$("#tour-container")
+      c=parseInt($t.data("current"))
+      l=$t.data("items")
+      if n == null
+        n=0
+      else 
+        n=c+n
+      if n>l.length
+        n=0
+      else if n<0
+        n=l.length
+      if c != 0
+        l[c-1].el.animate({left: "1000px" }, () ->
+          $(this).css { left: "-1000px" }
+        )
+      if n != 0
+        l[n-1].el.animate { left : "0px" }
+        nw.show(l[n-1].node)
+      else
+        nw.show(null)
+      $t.data({ current: n })
+     tour
+ 
+      
