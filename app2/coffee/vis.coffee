@@ -133,7 +133,7 @@ Network = () ->
   # color function used to color nodes
   nodeColors = d3.scale.category20()
   # tooltip used to display details
-  tooltip = Tooltip("vis-tooltip", 230)
+  tooltip = Tooltip("vis-tooltip")
 
   # charge used in artist layout
   charge = (node) -> -Math.pow(node.radius, 2.0) / 2
@@ -157,6 +157,7 @@ Network = () ->
 
     setLayout("force")
     setFilter("all")
+    
 
     # perform rendering and start force layout
     update()
@@ -223,24 +224,33 @@ Network = () ->
   # from search
   network.updateSearch = (searchTerm) ->
     searchRegEx = new RegExp(searchTerm.toLowerCase())
+    total = 0
     node.each (d) ->
       element = d3.select(this)
-      match = d.name.toLowerCase().search(searchRegEx)
+      match = d.data.name.toLowerCase().search(searchRegEx)
       if searchTerm.length > 0 and match >= 0
-        element.style("fill", "#F38630")
-          .style("stroke-width", 2.0)
-          .style("stroke", "#555")
+        element.style("fill", "#FF0")
+          .style("stroke", "#000")
         d.searched = true
+        total++
       else
         d.searched = false
-        element.style("fill", (d) -> nodeColors(d.artist))
-          .style("stroke-width", 1.0)
+        element.style("fill", (d) -> d.data.color )
+          .style("stroke", (d) -> strokeFor(d) )
+      if total == 0 
+        $("#searched").html("")
+      else 
+        $("#searched").html(total+" Mal gefunden");
 
   network.updateData = (newData) ->
     allData = setupData(newData)
     link.remove()
     node.remove()
     update()
+
+
+  network.hilight = (r,d) ->
+    showDetails.apply(r,d)
 
   # called once to clean up raw data and switch links to
   # point to node instances
@@ -252,8 +262,8 @@ Network = () ->
     data.nodes.forEach (n) ->
       # set initial x/y to values within the width/height
       # of the visualization
-      n.x = randomnumber=Math.floor(Math.random()*width)
-      n.y = randomnumber=Math.floor(Math.random()*height)
+      n.x = Math.floor(Math.random()*width)
+      n.y = Math.floor(Math.random()*height)
       # add radius to the node so we can use it later
       n.radius = circleRadius(n.data.count)
 
@@ -309,14 +319,16 @@ Network = () ->
   # Returns array of nodes
   filterNodes = (allNodes) ->
     filteredNodes = allNodes
+    countnodes = allNodes.filter (n) ->
+      n.type=='i'
     if filter == "popular" or filter == "obscure"
-      playcounts = allNodes.map((d) -> d.playcount).sort(d3.ascending)
-      cutoff = d3.quantile(playcounts, 0.5)
+      counts = countnodes.map((d) -> d.data.count).sort(d3.ascending)
+      cutoff = d3.quantile(counts, 0.5)
       filteredNodes = allNodes.filter (n) ->
         if filter == "popular"
-          n.playcount > cutoff
+          (n.type=="t") || (n.data.count > cutoff)
         else if filter == "obscure"
-          n.playcount <= cutoff
+          (n.type=="t") || (n.data.count <= cutoff)
 
     filteredNodes
 
@@ -344,7 +356,7 @@ Network = () ->
   updateCenters = (categories) ->
     if layout == "radial"
       groupCenters = RadialPlacement().center({"x":width/2, "y":height / 2 - 100})
-        .radius(300).increment(18).keys(categories)
+        .radius((height/2)-100).increment(18).keys(categories)
 
   # Removes links from allLinks whose
   # source or target is not present in curNodes
@@ -360,7 +372,7 @@ Network = () ->
       .data(curNodesData, (d) -> d.id)
 
     node.enter().append("circle")
-      .attr("class", "node")
+      .attr("class", (d) -> "node node-"+d.type)
       .attr("cx", (d) -> d.x)
       .attr("cy", (d) -> d.y)
       .attr "r", (d) -> 
@@ -392,7 +404,7 @@ Network = () ->
     link = linksG.selectAll("line.link")
       .data(curLinksData, (d) -> "#{d.source.id}_#{d.target.id}")
     link.enter().append("line")
-      .attr("class", "link")
+      .attr("class", (d) -> "link link-"+d.type)
       .attr("stroke", "#ddd")
       .attr("stroke-opacity", 0.8)
       .attr("x1", (d) -> d.source.x)
@@ -412,6 +424,8 @@ Network = () ->
     else if layout == "radial"
       force.on("tick", radialTick)
         .charge(charge)
+    else if layout == "focus"
+      force.on("tick", focusTick)
 
   # switches filter option to new filter
   setFilter = (newFilter) ->
@@ -459,19 +473,17 @@ Network = () ->
   # Helper function that returns stroke color for
   # particular node.
   strokeFor = (d) ->
-    d3.rgb(d.data.color).darker().toString()
+    if !d.searched
+      d3.rgb(d.data.color).darker().toString()
+    else 
+      "#FF00FF"
 
   # Mouseover tooltip function
   showDetails = (d,i) ->
-    if d.type == "i" 
-      content='<p class="main"><span> Wortmeldung "'+d.data.name+'"</span></p>'
+    if d.type == 'i'
+      tooltip.showTooltip(renderer.render("gedanke",d),d3.event)
     else
-      content='<p class="main"><span> #{d.data.name}</span></p>'
-
-    content += '<hr class="tooltip-hr">'
-    content += '<p class="main">' + d.artist + '</span></p>'
-    tooltip.showTooltip(content,d3.event)
-
+      tooltip.showTooltip(renderer.render("thema",d),d3.event)
     # higlight connected links
     if link
       link.attr("stroke", (l) ->
@@ -489,22 +501,20 @@ Network = () ->
     # watch out - don't mess with node if search is currently matching
     node.style("stroke", (n) ->
       if (n.searched or neighboring(d, n)) then "#555" else strokeFor(n))
-      .style("stroke-width", (n) ->
-        if (n.searched or neighboring(d, n)) then 2.0 else 1.0)
   
     # highlight the node being moused over
     d3.select(this).style("stroke","black")
-      .style("stroke-width", 2.0)
 
   # Mouseout function
   hideDetails = (d,i) ->
     tooltip.hideTooltip()
     # watch out - don't mess with node if search is currently matching
     node.style("stroke", (n) -> if !n.searched then strokeFor(n) else "#555")
-      .style("stroke-width", (n) -> if !n.searched then 1.0 else 2.0)
     if link
       link.attr("stroke", "#ddd")
         .attr("stroke-opacity", 0.8)
+        
+        
 
   # Final act of Network() function is to return the inner 'network()' function.
   return network
@@ -517,6 +527,7 @@ activate = (group, link) ->
 $ ->
   # nach dem Spreadsheet  
   myNetwork = Network()
+  window.nw=myNetwork
 
   d3.selectAll("#layouts a").on "click", (d) ->
     newLayout = d3.select(this).attr("id")
@@ -543,10 +554,16 @@ $ ->
   frag=$(document).aciFragment "api"
 
   Tabletop.init key : frag.get("key") || "0AnjSydpjIFuXdE9sUXpRRGtnd1liWVFqNXRtcXM2MUE", columnLabels: true, parseNumbers: true, callback: (data) -> 
-    settings = makesettings data.settings.elements
-    window.data=makedata(data.matrix, settings)
-    myNetwork("#vis", window.data)
-
+    settings  = makesettings data.settings.elements
+    templates = makesettings data.templates.elements
+    data	  = makedata(data.matrix, settings)
+    window.renderer=ECT({ root: templates })
+    $("h1").fadeOut
+      complete : () ->
+        $("h1").html(settings.title).fadeIn()
+        $("#rest").fadeIn()
+    myNetwork("#vis", data)
+    
   makesettings = (list) ->
     r={}
     _.each list, (e) -> 
@@ -629,6 +646,14 @@ $ ->
         id		: o.id
         type 	: "i"
         data	: o
+    nodes.forEach (n) ->
+      if n.type=="t"
+        n.data.items.sort (a,b) ->
+          b.count - a.count
+      else 
+        n.data.topics.sort (a,b) ->
+          b.sum - a.sum
     r =      
       nodes: nodes
       links: links
+
