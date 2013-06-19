@@ -374,7 +374,7 @@ Network = () ->
     # sort based on counts
     categories = d3.entries(counts).sort (a,b) ->
       b.value - a.value
-    console.log(categories)
+    # console.log(categories)
     # get just names
     # categories = categories.map (v) -> v.name
     # else
