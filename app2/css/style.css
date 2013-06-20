@@ -131,9 +131,14 @@ div#tour-container {
 div.tour-item {
 	position: absolute;
 	left: -1000px;
-	width: 100%;
-	height: 100%;
-	background: #F0F0F0;
+	width: 914px;
+	height: 36px;
+	-moz-border-radius:3px;
+	border-radius: 3px;
+	border: 2px solid #DDD;
+	background: #eee;
+	margin: 2px; 
 	padding: 10px;
+	opacity: 0.9 
 	font-size: 120%;
 }
